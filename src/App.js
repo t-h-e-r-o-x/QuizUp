@@ -3,6 +3,7 @@ import './App.css';
 import SignIn from './SignIn';
 import Register from './Register';
 import Navigation from './Navigation';
+import Home from './Home';
 
 const initialState = {
   route: 'signin'
@@ -29,10 +30,14 @@ this.setState({route: route});
     return (
       <div className="App">
       <Navigation onRouteChange = {this.onRouteChange} isSignedIn = {this.state.isSignedIn}/>
-      {this.state.route === 'signin'?
-        <SignIn onRouteChange = {this.onRouteChange}/>
+      {this.state.route === 'home'?
+        <Home />
         :
-        <Register onRouteChange = {this.onRouteChange}/>
+        (this.state.route === 'signin'?
+          <SignIn onRouteChange = {this.onRouteChange}/>
+          :
+          <Register onRouteChange = {this.onRouteChange}/>
+        )
       }
       </div>
     );
