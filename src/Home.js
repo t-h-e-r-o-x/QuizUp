@@ -40,3 +40,5 @@ onSubmitPlay = () => {
     );
   }
 }
+
+export default Home;

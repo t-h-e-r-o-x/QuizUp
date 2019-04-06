@@ -35,7 +35,7 @@ onEnterWrongOption3 = (event) => {
 onSubmit = () => {
   fetch("https://localhost:3000/makequiz", {
     method:'post',
-    headers:{'Content-Type':'application/json'}
+    headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
       quest:this.state.question,
       copt:this.state.correctoption,

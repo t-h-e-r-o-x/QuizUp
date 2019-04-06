@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 import Home from './Home';
 
 const initialState = {
-  route: 'signin'
+  route: 'signin',
   isSignedIn:false
 }
 

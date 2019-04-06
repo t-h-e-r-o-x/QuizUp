@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 class SignIn extends Component {
-  constrcutor(props){
+  constructor(props){
     super(props);
     this.state = {
       signInEmail : '',
@@ -13,7 +13,7 @@ class SignIn extends Component {
     this.setState({signInEmail: event.target.value});
   }
 
-  onEnterPassword = () => {
+  onEnterPassword = (event) => {
     this.setState({signInPassword: event.target.value});
   }
 
