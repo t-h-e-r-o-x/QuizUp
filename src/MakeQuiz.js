@@ -29,7 +29,7 @@ class MakeQuiz extends Component {
         <MakeQuizMusic />
         :
         <div>
-        <h2 className='f3 ba white bg-animate pa3'> Choose Category </h2>
+        <h2 className='f3 white bg-animate pa3'> Choose Category </h2>
         <p className='f3 ba b--gold gold link bg-animate hover-bg-black pa3 pointer' onClick = {this.onSubmitSports}>Sports</p>
         <p className='f3 ba b--gold gold link bg-animate hover-bg-black pa3 pointer' onClick = {this.onSubmitMusic}>Music</p>
         </div>
