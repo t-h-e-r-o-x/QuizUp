@@ -4,33 +4,40 @@ class Register extends Component {
   constructor(props){
     super(props);
     this.state = {
-      registerEmail: '',
-      registerPassword: '',
-      registerName: ''
+      email: '',
+      password: '',
+      name: ''
     }
   }
 
   onNameEnter = (event) => {
-    this.setState({registerName:event.target.value});
+    this.setState({name:event.target.value});
   }
 
   onPasswordEnter = (event) => {
-    this.setState({registerPassword: event.target.value});
+    this.setState({password: event.target.value});
   }
 
   onEmailEnter = (event) => {
-    this.setState({registerEmail: event.target.value});
+    this.setState({email: event.target.value});
   }
 
   onSubmit = () => {
-    fetch("https://localhost:3000/register", {
+    fetch('http://localhost:3000/register', {
       method: 'post',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
-        email : this.state.registerEmail,
-        password: this.state.registerPassword,
-        name: this.state.registerName
+        email : this.state.email,
+        password: this.state.password,
+        name: this.state.name
       })
+    })
+    .then(response => response.json())
+    .then(user => {
+      if(user.id){
+        this.props.loadUser(user);
+        this.props.onRouteChange('home');
+      }
     })
   }
 
